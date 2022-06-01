@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import web.service.ServiceCar;
-import web.service.ServiceCarImpl;
 
 import java.util.Optional;
 
@@ -15,8 +14,8 @@ public class CarController {
     private ServiceCar serviceCar;
 
     @Autowired
-    public CarController() {
-        serviceCar = new ServiceCarImpl();
+    public CarController(ServiceCar serviceCar) {
+        this.serviceCar = serviceCar;
     }
 
     @GetMapping(value = "/cars")

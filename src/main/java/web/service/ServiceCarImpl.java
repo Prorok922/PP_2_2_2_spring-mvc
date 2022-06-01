@@ -12,8 +12,8 @@ public class ServiceCarImpl implements ServiceCar{
     private DaoCarImpl daoCar;
 
     @Autowired
-    public ServiceCarImpl() {
-        daoCar = new DaoCarImpl();
+    public ServiceCarImpl(DaoCarImpl daoCar) {
+        this.daoCar = daoCar;
     }
 
     @Override
